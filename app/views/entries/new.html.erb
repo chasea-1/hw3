@@ -1,14 +1,17 @@
 <h1>New Entry for <%= @place.name %></h1>
 
 <%= form_with model: [@place, @entry] do |form| %>
+  
+  <%= form.hidden_field :place_id, value: @place.id %>
+  
   <%= form.label :title %>
   <%= form.text_field :title %><br>
 
   <%= form.label :description %>
   <%= form.text_area :description %><br>
 
-  <%= form.label :posted_on %>
-  <%= form.date_select :posted_on %><br>
+  <%= form.label :occurred_on %>
+  <%= form.date_select :occurred_on %><br>
 
   <%= form.submit "Create Entry" %>
 <% end %>
