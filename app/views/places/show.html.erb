@@ -1,0 +1,13 @@
+<h1><%= @place.name %></h1>
+
+<%= link_to "Add Entry", new_place_entry_path(@place) %>
+
+<ul>
+  <% @place.entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong><br>
+      <%= entry.description %><br>
+      Posted on: <%= entry.posted_on %>
+    </li>
+  <% end %>
+</ul>
